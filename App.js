@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, StatusBar, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, StatusBar, TouchableOpacity, FlatList, Modal } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import TaskList from './src/components/TaskList';
+import * as Animatable from 'react-native-animatable';
+
+const AnimatedButton = Animatable.createAnimatableComponent(TouchableOpacity);
 
 export default function App(){
-  const [ task, setTask ] = useState([{key: 1, task: 'Programar'}, {key: 2, task: 'Estudar'}, {key: 3, task: 'Amar a Clarinha'}]);
+  const [ insert, setInsert ] = useState(false);
+  const [ task, setTask ] = useState([{key: 1, task: 'Programar'}, {key: 2, task: 'Estudar'}, {key: 3, task: 'Amar a Clarinha'}]);  
 
   return(
     <SafeAreaView style={styles.container}>
@@ -13,9 +17,14 @@ export default function App(){
         <Text style={styles.title}>Minhas Tarefas</Text>
       </View>
       <FlatList marginHorizontal={10} showsHorizontalScrollIndicator={false} data={task} keyExtractor={(item) => String(item.key)} renderItem={({item}) => <TaskList data={item} />}  />
-      <TouchableOpacity style={styles.button}>
+      <Modal animationType="slide" transparent={false} visible={insert}>
+            <SafeAreaView>
+                <Text>Modal Text</Text>
+            </SafeAreaView>
+        </Modal>
+      <AnimatedButton style={styles.button} useNativeDriver animation="bounceInUp" duration={1500} onPress={() => setInsert(true)} > 
         <Ionicons name="ios-add" size={35} color="#FFFFFF" />
-      </TouchableOpacity>
+      </AnimatedButton>
     </SafeAreaView>
   );
 }
