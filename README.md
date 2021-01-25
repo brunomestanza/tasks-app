@@ -6,8 +6,8 @@
 O aplicativo consiste em um simples sistema de tarefas a serem realizadas, criado durante o primeiro contato com o React Native, e suas funcionalidades. Aplicativo básico feito durante aprendizado, que sera atualizado futuramente com funções mais complexas, e maior interação com o usuário.
 
 ## Layout
-![Mobile 1](https://github.com/brunomestanza/tasks-app/blob/main/assets/app/tasks-001.jpg.jpg)
-![Mobile 2](https://github.com/brunomestanza/tasks-app/blob/main/assets/app/tasks-002.jpg.jpg)
+![Mobile 1](https://github.com/brunomestanza/tasks-app/blob/main/assets/app/tasks-001.jpg)
+![Mobile 2](https://github.com/brunomestanza/tasks-app/blob/main/assets/app/tasks-002.jpg)
 
 # Tecnologias utilizadas
 
